@@ -7,6 +7,7 @@ This repository uses the following workflow orchestration for human and AI contr
 - Touch only the files required for the task.
 - Keep the repo in a verifiable state before calling work complete.
 - Start each new distinct task or story on its own git branch.
+- Before GitHub issue, PR, label, or comment actions, verify the active GitHub account is `johnrirwin`.
 - If higher-level system or tool policies conflict with this file, follow those higher-level policies first.
 
 ## 1. Plan First
@@ -105,7 +106,12 @@ After any user correction:
 - Use the `codex/` branch prefix by default unless the user requests a different branch name or target branch.
 - Keep unrelated work on separate branches.
 
-## 10. Repo Startup Checklist
+## 10. GitHub Account Safety
+- Before any GitHub CLI write action, verify the active GitHub account is `johnrirwin`.
+- If the active account is different, or GitHub authentication is invalid, stop and ask for re-authentication before continuing with GitHub actions.
+- Do not use `jirwin-lb` for work in this repository unless the user explicitly instructs otherwise.
+
+## 11. Repo Startup Checklist
 At the start of any non-trivial task:
 1. Review this file.
 2. Review relevant entries in `tasks/lessons.md`.
