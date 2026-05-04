@@ -6,6 +6,7 @@ This repository uses the following workflow orchestration for human and AI contr
 - Prefer simple, minimal, root-cause fixes.
 - Touch only the files required for the task.
 - Keep the repo in a verifiable state before calling work complete.
+- Start each new distinct task or story on its own git branch.
 - If higher-level system or tool policies conflict with this file, follow those higher-level policies first.
 
 ## 1. Plan First
@@ -99,11 +100,17 @@ After any user correction:
 - Call out re-plans explicitly when the situation changes.
 - Summarize what changed, why, and how it was verified.
 
-## 9. Repo Startup Checklist
+## 9. Git Branching
+- At the start of every new distinct task or story, create and switch to a fresh branch before making changes.
+- Use the `codex/` branch prefix by default unless the user requests a different branch name or target branch.
+- Keep unrelated work on separate branches.
+
+## 10. Repo Startup Checklist
 At the start of any non-trivial task:
 1. Review this file.
 2. Review relevant entries in `tasks/lessons.md`.
-3. Write or refresh `tasks/todo.md`.
-4. Inspect the current code and baseline behavior.
-5. Implement the smallest correct change.
-6. Verify before declaring completion.
+3. Create or switch to the task branch.
+4. Write or refresh `tasks/todo.md`.
+5. Inspect the current code and baseline behavior.
+6. Implement the smallest correct change.
+7. Verify before declaring completion.
