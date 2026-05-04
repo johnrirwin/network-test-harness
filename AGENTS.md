@@ -29,6 +29,7 @@ Use plan mode, or the closest available equivalent, for any non-trivial task.
 ### Requirements
 - Keep `tasks/todo.md` out of version control.
 - Confirm the plan before major implementation begins when the workflow allows for it.
+- Do not block on explicit confirmation for trivial, low-risk work such as small doc edits or isolated single-file changes unless the user asks for a checkpoint.
 - Mark checklist items complete as work progresses.
 - Add a short review section at the end of the task covering:
   - What changed
@@ -40,7 +41,7 @@ Use plan mode, or the closest available equivalent, for any non-trivial task.
 - `tasks/lessons.md`: durable lessons learned after user corrections; tracked in git
 
 ## 3. Subagent Strategy
-Use subagents liberally when platform policy and tool availability allow it.
+Use subagents proactively, but deliberately, when platform policy and tool availability allow it.
 
 ### Good subagent work
 - Research
@@ -50,6 +51,8 @@ Use subagents liberally when platform policy and tool availability allow it.
 
 ### Rules
 - Use one task per subagent.
+- Prefer subagents for bounded, parallelizable work where the expected leverage outweighs coordination cost.
+- Avoid spawning subagents for trivial edits or work the main thread can complete faster directly.
 - Keep the main thread focused on integration and decision-making.
 - For complex problems, increase compute with parallel subagents where possible.
 - Do not keep pushing on a failing path; gather findings, then re-plan.
